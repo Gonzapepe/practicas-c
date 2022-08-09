@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/gonzapepe/Desktop/proyectos/practice-c/out/build/x64-Debug/practice-c/CMakeFiles/practice-c.dir/embed.manifest"
