@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Agregue un origen al ejecutable de este proyecto.
-add_executable (main "main.c")
+add_executable (main "main.c" "array.h")
 
 # TODO: Agregue pruebas y destinos de instalación si es necesario.
