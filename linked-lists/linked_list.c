@@ -44,7 +44,7 @@ void append(struct Node** head_ref, int new_data)
     /* 1. allocate node */
     struct Node* new_node = (struct Node*) malloc(sizeof(struct Node));
   
-    struct Node* last = *head_ref;  /* used in step 5*/
+    struct Node *last = *head_ref;  /* used in step 5*/
   
     /* 2. put in the data  */
 	if (new_node) {
@@ -64,14 +64,17 @@ void append(struct Node** head_ref, int new_data)
     }
   
     /* 5. Else traverse till the last node */
-    while (last->next != NULL)
-        last = last->next;
+	while (last->next != NULL) 
+		last = last->next;
+	
+        
   
     /* 6. Change the next of last node */
     last->next = new_node;
     return;
 }
 
+// inser_after inster value after the given node
 void insert_after(struct Node* prev_node, int new_data) {
 	if (prev_node == NULL) {
 		printf("The given previous node cannot be NULL");
@@ -88,6 +91,36 @@ void insert_after(struct Node* prev_node, int new_data) {
 	
 
 	prev_node->next = new_node;
+}
+
+// delete_node delete node at given position
+void delete_node(struct Node* head,int pos) {
+	struct Node* current = head;
+	struct Node* previous = NULL;
+	if (pos == 0) {
+		head = head->next;
+	}
+
+	int i = 0;
+
+	while (current != NULL) {
+		previous = current;
+		current = current->next;
+		i++;
+		if (i == pos) {
+			previous->next = current->next;
+		}
+	}
+}
+
+int count(struct Node* head) {
+	int count = 0;
+	struct Node* current = head;
+	while (current != NULL) {
+		count++;
+		current = current->next;
+	}
+	return count;
 }
 
 void test_print() {
@@ -153,4 +186,24 @@ void test_insert_after() {
 	insert_after(head, 5);
 
 	printList(head);
+}
+
+void test_delete() {
+	struct Node* head = NULL;
+	append(&head, 2);
+	append(&head, 3);
+	append(&head, 4);
+
+	delete_node(head, 1);
+
+	printList(head);
+}
+
+void test_count() {
+	struct Node* head = NULL;
+	append(&head, 2);
+	append(&head, 3);
+	append(&head, 4);
+
+	printf("La cantidad de nodos que hay es %d", count(head));
 }

@@ -7,6 +7,8 @@ int main() {
 //	test_print();
 //	test_push();
 //	test_append();
-	test_insert_after();
+//	test_insert_after();
+//	test_delete();
+	test_count();
 	return 0;
 }
