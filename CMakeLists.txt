@@ -9,3 +9,4 @@ project ("practice-c")
 
 add_subdirectory ("arrays")
 add_subdirectory ("linked-lists")
+add_subdirectory ("stacks")
